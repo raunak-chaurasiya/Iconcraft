@@ -1,0 +1,83 @@
+{
+  "name": "iconcraft-react",
+  "version": "1.0.0",
+  "description": "High-performance customizable React icon library and studio with 2,000+ icons, live styling, and SVG normalization",
+  "author": "IconCraft Team",
+  "license": "MIT",
+  "homepage": "https://github.com/iconcraft/iconcraft#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iconcraft/iconcraft.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iconcraft/iconcraft/issues"
+  },
+  "keywords": [
+    "react",
+    "icons",
+    "lucide",
+    "svg",
+    "components",
+    "icon-library",
+    "customizer",
+    "ui",
+    "tailwind",
+    "design-system",
+    "vector",
+    "typescript"
+  ],
+  "type": "module",
+  "main": "./dist-lib/index.cjs",
+  "module": "./dist-lib/index.js",
+  "types": "./dist-lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist-lib/types/index.d.ts",
+        "default": "./dist-lib/index.js"
+      },
+      "require": {
+        "types": "./dist-lib/types/index.d.ts",
+        "default": "./dist-lib/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist-lib",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build:app": "vite build",
+    "build:lib": "vite build --config vite.config.lib.ts && tsc -p tsconfig.lib.json",
+    "build": "npm run build:app && npm run build:lib",
+    "prepare": "npm run build:lib",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "jszip": "^3.10.2",
+    "lucide-react": "^1.74.0",
+    "tailwind-merge": "^3.7.0",
+    "zustand": "^5.1.0"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/jszip": "^3.4.0",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "oxlint": "^1.90.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwindcss": "^4.3.5",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.6"
+  }
+}
